@@ -4,13 +4,14 @@ module.exports = {
   entry: __dirname + '/app/app.ts',
   output: {
     filename: 'app.bundle.js',
-    path: __dirname + '/app',
+    path: path.resolve(__dirname, '/'),
+    publicPath: '/app/'
   },
   mode: 'development',
   module: {
     rules: [
       {
-        test: /\.tsx?$/, // Match .ts and .tsx files
+        test: /\.ts?$/, // Match .ts and .tsx files
         use: 'babel-loader',
         exclude: /node_modules/,
       },
@@ -20,10 +21,12 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
   },
   devServer: {
-    contentBase: __dirname + '/app',
-    publicPath: '/app/',
+    static: {
+      directory: path.join(__dirname, '/'),
+    },
     port: 8080,
     host: 'localhost',
+    open: true, // Automatically open in the browser
+    historyApiFallback: true, // Allows for using client-side routing
   },
 };
-
