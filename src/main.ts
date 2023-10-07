@@ -1,1 +1,1 @@
-console.log('holy shit, it is running!');
+console.log('Holy shit, it works!');

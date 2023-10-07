@@ -1,10 +1,11 @@
+/* eslint-env node */
 const path = require('path');
 
 module.exports = {
-  entry: __dirname + '/src/main.ts',
+  entry: path.join(__dirname, '/src/main.ts'),
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/dist/'
   },
   mode: 'development',
