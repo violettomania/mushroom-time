@@ -1,7 +1,5 @@
 # Karate Frog’s Mushroom Time
 
-Watch mode: `npm run start`
-
 ## Dev environment
 
 ### Setup
