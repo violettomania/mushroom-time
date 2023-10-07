@@ -1,17 +1,17 @@
 const path = require('path');
 
 module.exports = {
-  entry: __dirname + '/app/app.ts',
+  entry: __dirname + '/src/main.ts',
   output: {
     filename: 'app.bundle.js',
-    path: path.resolve(__dirname, '/'),
-    publicPath: '/app/'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/'
   },
   mode: 'development',
   module: {
     rules: [
       {
-        test: /\.ts?$/, // Match .ts and .tsx files
+        test: /\.tsx?$/, // Match .ts and .tsx files
         use: 'babel-loader',
         exclude: /node_modules/,
       },
