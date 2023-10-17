@@ -1,0 +1,38 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app
+        run: npm run build  # Replace with the actual build command for your app
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "violettomania"
+          git config --global user.email "danielpolya@protonmail.com"
+          git checkout --orphan production
+          git --set-upstream-to=origin/main
+          git pull
+          git add --all
+          git commit -m "deploy app"
+          git push -f origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
