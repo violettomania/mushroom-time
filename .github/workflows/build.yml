@@ -29,8 +29,6 @@ jobs:
           git config --global user.name "violettomania"
           git config --global user.email "danielpolya@protonmail.com"
           git checkout --orphan production
-          git branch --set-upstream-to=origin/main
-          git pull
           git add --all
           git commit -m "deploy app"
           git push -f origin production
