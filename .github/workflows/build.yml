@@ -26,6 +26,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
+          echo "My GitHub Token: $GITHUB_TOKEN"
           git config --global user.name "violettomania"
           git config --global user.email "danielpolya@protonmail.com"
           git checkout --orphan production
