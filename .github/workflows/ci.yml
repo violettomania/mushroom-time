@@ -26,7 +26,6 @@ jobs:
 
       - name: Deploy to GitHub Pages
         run: |
-          echo "My GitHub Token: $GITHUB_TOKEN"
           git config --global user.name "violettomania"
           git config --global user.email "danielpolya@protonmail.com"
           git checkout --orphan production
@@ -34,4 +33,4 @@ jobs:
           git commit -m "deploy app"
           git push -f origin production
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
