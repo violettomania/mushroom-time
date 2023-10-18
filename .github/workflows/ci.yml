@@ -16,13 +16,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 20
+          node-version: 20.8.0
 
       - name: Install dependencies
         run: npm install
 
       - name: Build the app
-        run: npm run build  # Replace with the actual build command for your app
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         run: |
