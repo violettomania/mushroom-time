@@ -1,5 +1,7 @@
 # Karate Frog’s Mushroom Time
 
+try it out at https://violettomania.github.io/mushroom-time/
+
 ## Dev environment
 
 ### Setup
