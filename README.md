@@ -6,8 +6,8 @@ try it out at https://violettomania.github.io/mushroom-time/
 
 ### Setup
 
-Start dev server: `npm run start`
 Lint: `npm run lint-dev`
+Start dev server: `npm run start`
 
 ### Troubleshoot
 
