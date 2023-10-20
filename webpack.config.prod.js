@@ -1,32 +1,36 @@
-import { join } from 'path';
-import CopyWebpackPlugin from 'copy-webpack-plugin';
+/* eslint-env node */
+const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-export const entry = join(__dirname, '/src/index.ts');
-export const output = {
+module.exports = {
+  entry: path.join(__dirname, '/src/index.ts'),
+  output: {
     filename: 'app.bundle.js',
-    path: join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     publicPath: '/dist/'
-};
-export const mode = 'production';
-export const module = {
+  },
+  mode: 'production',
+  module: {
     rules: [
-        {
-            test: /\.tsx?$/,
-            use: 'babel-loader',
-            exclude: /node_modules/,
-        },
+      {
+        test: /\.tsx?$/, // Match .ts and .tsx files
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
     ],
-};
-export const plugins = [
+  },
+  plugins: [
     new CopyWebpackPlugin({
-        patterns: [
-            {
-                from: 'src/assets',
-                to: 'assets',
-            },
-        ],
+      patterns: [
+        {
+          from: 'src/assets',
+          to: 'assets',
+        },
+      ],
     }),
-];
-export const resolve = {
+  ],
+  resolve: {
     extensions: ['.ts', '.tsx', '.js'],
+  },
 };
+

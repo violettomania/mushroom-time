@@ -20,7 +20,7 @@
     "build": "webpack --config webpack.config.prod.js --mode production",
     "build:dev": "webpack --config webpack.config.dev.js --mode development",
     "start": "webpack-dev-server --config webpack.config.dev.js --mode development --open",
-    "lint-dev": "eslint . --ext .js,.ts",
-    "lint-build": "eslint . --ext .js,.ts --max-warnings 0"
+    "lint-dev": "eslint . --ext .js,.ts -c .eslintrc.js",
+    "lint-build": "eslint . --ext .js,.ts -c .eslintrc.js --max-warnings 0"
   }
 }
