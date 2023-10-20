@@ -1,6 +1,6 @@
 /* eslint-env node */
 const path = require('path');
-const copyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: path.join(__dirname, '/src/index.ts'),
@@ -19,16 +19,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new copyWebpackPlugin({
-      patterns: [
-        {
-          from: 'src/assets',
-          to: 'assets',
-        },
-      ],
-    }),
-  ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
