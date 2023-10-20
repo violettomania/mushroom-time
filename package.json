@@ -2,7 +2,8 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "phaser": "^3.60.0"
+    "phaser": "^3.60.0",
+    "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
@@ -20,6 +21,6 @@
     "build:dev": "webpack --config webpack.config.dev.js --mode development",
     "start": "webpack-dev-server --config webpack.config.dev.js --mode development --open",
     "lint-dev": "eslint . --ext .js,.ts",
-    "lint-build": "npm run lint-dev -- --max-warnings 0"
+    "lint-build": "eslint . --ext .js,.ts --max-warnings 0"
   }
 }
