@@ -1,33 +1,31 @@
 /* eslint-env node */
-const path = require('path');
+import { join } from 'path';
 
-module.exports = {
-  entry: path.join(__dirname, '/src/index.ts'),
-  output: {
-    filename: 'app.bundle.js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/'
-  },
-  mode: 'development',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/, // Match .ts and .tsx files
-        use: 'babel-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-  },
-  devServer: {
-    static: {
-      directory: path.join(__dirname, '/'),
+export const entry = join(__dirname, '/src/index.ts');
+export const output = {
+  filename: 'app.bundle.js',
+  path: join(__dirname, 'dist'),
+  publicPath: '/dist/'
+};
+export const mode = 'development';
+export const module = {
+  rules: [
+    {
+      test: /\.tsx?$/,
+      use: 'babel-loader',
+      exclude: /node_modules/,
     },
-    port: 8080,
-    host: 'localhost',
-    open: true, // Automatically open in the browser
-    historyApiFallback: true, // Allows for using client-side routing
+  ],
+};
+export const resolve = {
+  extensions: ['.ts', '.tsx', '.js'],
+};
+export const devServer = {
+  static: {
+    directory: join(__dirname, '/'),
   },
+  port: 8080,
+  host: 'localhost',
+  open: true,
+  historyApiFallback: true, // Allows for using client-side routing
 };
