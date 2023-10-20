@@ -1,19 +1,15 @@
 import { Scene, GameObjects } from 'phaser';
+import { getBaseUrl } from '../helper';
 
 export class LoadingScene extends Scene {
-  private frog!: GameObjects.Sprite;
+  frog!: GameObjects.Sprite;
 
   constructor() {
     super('loading-scene');
   }
 
   preload() {
-    if (process.env.NODE_ENV === 'development') {
-      this.load.baseURL = 'src/assets/';
-    } else {
-      this.load.baseURL = 'dist/assets/';
-    }
-
+    this.load.baseURL = getBaseUrl();
     this.load.image('frog', 'sprites/frog.png');
   }
 

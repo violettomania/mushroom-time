@@ -9,6 +9,8 @@ try it out at https://violettomania.github.io/mushroom-time/
 Lint: `npm run lint-dev`
 Start dev server: `npm run start`
 
+Recommended VSCode extension: ESLint
+
 ### Troubleshoot
 
 - `This site can’t provide a secure connection` browser error (usually happens in non-incognito mode):

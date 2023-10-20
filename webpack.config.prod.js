@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'app.bundle.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   mode: 'production',
   module: {
@@ -33,4 +33,3 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'],
   },
 };
-

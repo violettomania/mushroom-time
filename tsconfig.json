@@ -7,8 +7,9 @@
     "strict": true,
     "alwaysStrict": true,
     "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["**/*.ts"],
+  "include": ["**/*.ts", "src/helper.ts"],
   "exclude": ["node_modules"],
   "types": ["phaser"]
 }

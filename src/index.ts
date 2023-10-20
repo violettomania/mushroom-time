@@ -1,3 +1,4 @@
+import Phaser from 'phaser';
 import { Game, Types } from 'phaser';
 import { LoadingScene } from './scenes/loadingScene';
 
@@ -37,15 +38,15 @@ const gameConfig: Types.Core.GameConfig = {
 const game = new Game(gameConfig);
 
 const sizeChanged = () => {
-    if (game.isBooted) {
-      setTimeout(() => {
-        game.scale.resize(window.innerWidth, window.innerHeight);
-        game.canvas.setAttribute(
-          'style',
-          `display: block; width: ${window.innerWidth}px; height: ${window.innerHeight}px;`,
-        );
-      }, 100);
-    }
-  };
+  if (game.isBooted) {
+    setTimeout(() => {
+      game.scale.resize(window.innerWidth, window.innerHeight);
+      game.canvas.setAttribute(
+        'style',
+        `display: block; width: ${window.innerWidth}px; height: ${window.innerHeight}px;`
+      );
+    }, 100);
+  }
+};
 
 window.onresize = () => sizeChanged();

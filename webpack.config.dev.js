@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: 'app.bundle.js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/'
+    publicPath: '/dist/',
   },
   mode: 'development',
   module: {
@@ -31,4 +31,3 @@ module.exports = {
     historyApiFallback: true, // Allows for using client-side routing
   },
 };
-
