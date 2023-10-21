@@ -1,7 +1,4 @@
-# Created by MichaelCurrin
-# https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba
-
-name: Build and deploy
+name: Build and deploy app
 
 on:
   push:
@@ -9,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  checkout:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,12 +15,27 @@ jobs:
         with:
           persist-credentials: false
 
+  install:
+    runs-on: ubuntu-latest
+    needs: checkout
+
+    steps:
       - name: Install dependencies 🔧
         run: npm install
 
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+
+    steps:
       - name: Lint
         run: npm run lint-build
 
+  build:
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
       - name: Build 🏗️
         run: npm run build
 
@@ -31,20 +43,16 @@ jobs:
         uses: actions/upload-pages-artifact@v2
 
   deploy:
-    # Add a dependency to the build job
     needs: build
 
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
     permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
+      pages: write
+      id-token: write
 
-    # Deploy to the github-pages environment
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    # Specify runner + deployment step
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
