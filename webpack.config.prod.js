@@ -6,8 +6,8 @@ module.exports = {
   entry: path.join(__dirname, '/src/index.ts'),
   output: {
     filename: 'app.bundle.js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: '/dist/',
+    path: path.join(__dirname, '_site'),
+    publicPath: '/_site/',
   },
   mode: 'production',
   module: {
