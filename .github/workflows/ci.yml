@@ -28,9 +28,9 @@ jobs:
         run: npm run build
 
       - name: Upload artifacts
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v2
 
       - name: Deploy to GH Pages 🚀
-        uses: actions/deploy-pages
+        uses: actions/deploy-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
