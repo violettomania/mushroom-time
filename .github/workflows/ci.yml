@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  checkout:
+  install:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,11 +15,6 @@ jobs:
         with:
           persist-credentials: false
 
-  install:
-    runs-on: ubuntu-latest
-    needs: checkout
-
-    steps:
       - name: Install dependencies 🔧
         run: npm install
         working-directory: ./mushroom-time
