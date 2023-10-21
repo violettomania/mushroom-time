@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: 'app.bundle.js',
     path: path.join(__dirname, '_site'),
-    publicPath: '/mushroom-time/_site/',
+    publicPath: '/_site/',
   },
   mode: 'production',
   module: {
