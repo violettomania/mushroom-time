@@ -33,6 +33,10 @@ module.exports = {
           from: 'src/assets',
           to: 'assets',
         },
+        {
+          from: 'favicon.ico',
+          to: 'favicon.ico',
+        },
       ],
     }),
     new CleanWebpackPlugin(),
