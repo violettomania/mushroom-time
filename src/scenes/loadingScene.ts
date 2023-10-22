@@ -1,5 +1,5 @@
 import { Scene, GameObjects } from 'phaser';
-import { getBaseUrl } from '../helper';
+import { getBaseUrl } from '../assetsHelper';
 
 export class LoadingScene extends Scene {
   frog!: GameObjects.Sprite;

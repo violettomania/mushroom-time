@@ -9,7 +9,7 @@
     "skipLibCheck": false,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["**/*.ts", "src/helper.ts"],
+  "include": ["**/*.ts", "src/assetsHelper.ts"],
   "exclude": ["node_modules"],
   "types": ["phaser"]
 }
