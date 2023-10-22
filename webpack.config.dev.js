@@ -1,6 +1,8 @@
 /* eslint-env node */
 const path = require('path');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
   entry: path.join(__dirname, '/src/index.ts'),
   output: {
@@ -18,6 +20,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [new CleanWebpackPlugin()],
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
