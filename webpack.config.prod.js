@@ -24,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: 'index.prod.html',
       filename: 'index.html',
     }),
     new CopyWebpackPlugin({
