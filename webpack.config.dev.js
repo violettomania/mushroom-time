@@ -24,6 +24,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
   },
+  devtool: 'inline-source-map',
   devServer: {
     static: {
       directory: path.join(__dirname, '/'),
@@ -32,5 +33,6 @@ module.exports = {
     host: 'localhost',
     open: true, // Automatically open in the browser
     historyApiFallback: true, // Allows for using client-side routing
+    liveReload: true,
   },
 };
