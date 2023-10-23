@@ -2,6 +2,8 @@ name: Build and deploy app
 
 on:
   push:
+    tags:
+      - 'v[0-9]+\.[0-9]+\.[0-9]+'
     branches:
       - main
 
